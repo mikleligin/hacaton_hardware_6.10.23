@@ -9,6 +9,8 @@ int
 void loop() {
   String accel;
   if (esp8266.available()) {
+
+    //Для теста ветки
     char c = esp8266.read();
     if(c == '!')
     {
