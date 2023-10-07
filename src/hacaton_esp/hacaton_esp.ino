@@ -86,11 +86,13 @@ void loop()
   }
   for(int j = 0; j < 7 ; j++)
   {
-    Serial.print('`');
+    Serial.print('~');
+    Serial.print(j);
     for(int i = indexx[j]; temp_line[i] !='<' ; i++)
     {
       Serial.print(temp_line[i]);
     }
+    //Serial.print('\n');
     Serial.print('#');
   }
   delay(60000); // Подождите 60 секунд перед повторным запросом
