@@ -10,13 +10,13 @@ void loop() {
   String accel;
   if (esp8266.available()) {
     dot++;
-    if(!dot%10)
+    if(dot%250==0)
     {
-      Serial.print('.');
+      Serial.println('.');
     }
     //Для теста ветки
     char c = esp8266.read();
-    if(c == '!')
+    if(c == '`')
     {
       flag = 1;
     }
@@ -28,7 +28,7 @@ void loop() {
     {
       Serial.write(c); // Пересылать данные с ESP8266 в монитор порта Arduino
     }
-    if(c == '#')
+    if(c == '#' && flag)
     {
       Serial.write('\n');
     }

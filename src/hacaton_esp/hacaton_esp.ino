@@ -1,5 +1,4 @@
 #include <ESP8266WiFi.h>
-#include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h> 
 #include <ArduinoJson.h>
 #include <WiFiClientSecureBearSSL.h>
@@ -87,7 +86,7 @@ void loop()
   }
   for(int j = 0; j < 7 ; j++)
   {
-    Serial.print('!');
+    Serial.print('`');
     for(int i = indexx[j]; temp_line[i] !='<' ; i++)
     {
       Serial.print(temp_line[i]);
