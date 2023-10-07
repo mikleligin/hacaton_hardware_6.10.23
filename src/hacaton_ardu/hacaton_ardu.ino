@@ -5,22 +5,24 @@ void setup() {
   esp8266.begin(9600); // Настройте скорость обмена данными для ESP8266
 }
 int flag = 0;
-int 
+int dot = 0;
 void loop() {
   String accel;
   if (esp8266.available()) {
-
+    dot++;
+    if(!dot%10)
+    {
+      Serial.print('.');
+    }
     //Для теста ветки
     char c = esp8266.read();
     if(c == '!')
     {
       flag = 1;
-      continue;
     }
     if(c == '#')
     {
       Serial.write('\n');
-      continue;
     }
     if(c != '\n' && flag)
     {
