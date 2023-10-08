@@ -24,26 +24,32 @@ String utf8rus();
 #define YELLOW  0xFFE0
 #define WHITE   0xFFFF
 Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
+
+void clear_time()
+{
+  for(int i = 0; i<50;i++)
+  {
+    tft.drawLine(0, i, 150, i, BLACK);
+  }
+}
 void setup(void) {
   Serial.begin(9600);
-  progmemPrintln(PSTR("TFT LCD test"));
-#ifdef USE_ADAFRUIT_SHIELD_PINOUT
-  progmemPrintln(PSTR("Using Adafruit 2.8\" TFT Arduino Shield Pinout"));
-#else
-  progmemPrintln(PSTR("Using Adafruit 2.8\" TFT Breakout Board Pinout"));
-#endif
+// #ifdef USE_ADAFRUIT_SHIELD_PINOUT
+//   progmemPrintln(PSTR("Using Adafruit 2.8\" TFT Arduino Shield Pinout"));
+// #else
+//   progmemPrintln(PSTR("Using Adafruit 2.8\" TFT Breakout Board Pinout"));
+// #endif
   tft.reset();
   tft.begin(0x9341); // SDFP5408
   tft.setRotation(3); // Need for the Mega, please changed for your choice or rotation initial
-  progmemPrintln(PSTR("Benchmark                Time (microseconds)"));
-
+  // progmemPrintln(PSTR("Benchmark                Time (microseconds)"));
   esp8266.begin(9600);
   tft.fillScreen(BLACK);
   tft.setCursor(0, 0);
   tft.cp437(true);
   tft.setTextSize(2);
   tft.setTextColor(YELLOW);
-  tft.println(utf8rus("Время 3:42"));
+  tft.println(utf8rus("Дата 08.10.23"));
   tft.println();
   tft.println();
   tft.println();
@@ -73,6 +79,8 @@ String ParsedBySkrm = "";
 int hflag = 0;
 String half1 = "";
 String half2 = "";
+String half3 = "";
+String half4 = "";
 //tft.fillScreen(BLACK);
 
 
@@ -81,7 +89,7 @@ void loop(void) {
   String accel;
   if (esp8266.available()) {
     dot++;
-    if(dot%350==0)
+    if(dot%400==0)
     {
 
       //tft.print(utf8rus("Математика"));
@@ -124,7 +132,7 @@ void loop(void) {
       if((c == '#') && (hflag))
       {
         hflag = 0;
-        if(ParsedBySkrm.indexOf("~1")>-1 && ParsedBySkrm.indexOf("~2")>-1 && ParsedBySkrm.indexOf("~3")>-1 && ParsedBySkrm.indexOf("~4")>-1)// && ParsedBySkrm.indexOf("~5")>-1 )//&& ParsedBySkrm.indexOf("~6")>-1)
+        if(ParsedBySkrm.indexOf("~1")>-1 && ParsedBySkrm.indexOf("~2")>-1 && ParsedBySkrm.indexOf("~3")>-1 && ParsedBySkrm.indexOf("~4")>-1 && ParsedBySkrm.indexOf("~5")>-1 && ParsedBySkrm.indexOf("~6")>-1)
         {
           //String half1;
           tft.setTextSize(2);
@@ -132,8 +140,9 @@ void loop(void) {
           tft.setCursor(0, 0);
           tft.setTextColor(YELLOW);
           tft.println(utf8rus("Время 3:42"));
+          tft.setTextSize(1.75);
           tft.setTextColor(WHITE);
-          for(int i = 0; i < ParsedBySkrm.length()/2;i++ )
+          for(int i = 0; i < ParsedBySkrm.length()/4;i++ )
           {
 
             if(ParsedBySkrm[i]=='#')
@@ -146,9 +155,21 @@ void loop(void) {
           }
           // Serial.println(ParsedBySkrm);
           // tft.print(utf8rus(ParsedBySkrm));
+          // for(int i = 0; i < 4;i++)
+          // {
+          //   for((int j = 0; j < ind[i];j++))
+          //   {
+          //     tempp+=ParsedBySkrm[j];
+          //   }
+          //   for(int k = ind[i]; k<ind[i]+2;k++)
+          //   {
+          //   tempp_color+=ParsedBySkrm[k];
+          //   }
+            
+          // }
           Serial.println(half1);
           tft.print(utf8rus(half1));
-          for(int i =  ParsedBySkrm.length()/2; i < ParsedBySkrm.length();i++ )
+          for(int i =  ParsedBySkrm.length()/4; i < ParsedBySkrm.length()/2;i++ )
           {
 
             if(ParsedBySkrm[i]=='#')
@@ -160,6 +181,30 @@ void loop(void) {
             half2+=ParsedBySkrm[i];
           }
           tft.print(utf8rus(half2));
+          for(int i =  ParsedBySkrm.length()/2; i < ParsedBySkrm.length()*3/4;i++ )
+          {
+
+            if(ParsedBySkrm[i]=='#')
+            {
+              half3+='\n';
+              half3+='\n';
+              continue;
+            }
+            half3+=ParsedBySkrm[i];
+          }
+          tft.print(utf8rus(half3));
+          for(int i =  ParsedBySkrm.length()*3/4; i < ParsedBySkrm.length();i++ )
+          {
+
+            if(ParsedBySkrm[i]=='#')
+            {
+              half4+='\n';
+              half4+='\n';
+              continue;
+            }
+            half4+=ParsedBySkrm[i];
+          }
+          tft.print(utf8rus(half4));
           ParsedBySkrm = "";
         }
       }
