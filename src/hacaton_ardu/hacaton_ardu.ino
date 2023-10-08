@@ -42,6 +42,21 @@ void setup(void) {
   tft.setCursor(0, 0);
   tft.cp437(true);
   tft.setTextSize(2);
+  tft.setTextColor(YELLOW);
+  tft.println(utf8rus("Время 3:42"));
+  tft.println();
+  tft.println();
+  tft.println();
+  tft.println();
+  tft.println();
+  tft.setTextSize(4);
+  tft.setTextColor(GREEN);
+  tft.println("$chmod -er -s");
+  tft.setTextSize(2);
+  tft.setTextColor(WHITE);
+  tft.println(utf8rus("       Загрузка..."));
+  tft.setCursor(0, 223);
+  tft.setTextSize(1);
 }
 
 bool evenflag = 1;
@@ -56,7 +71,8 @@ char c;
 
 String ParsedBySkrm = "";
 int hflag = 0;
-
+String half1 = "";
+String half2 = "";
 //tft.fillScreen(BLACK);
 
 
@@ -65,13 +81,16 @@ void loop(void) {
   String accel;
   if (esp8266.available()) {
     dot++;
-    if(dot%250==0)
+    if(dot%350==0)
     {
+
       //tft.print(utf8rus("Математика"));
       // tft.write('к');
       // tft.write('с');
       // tft.write('т');
-      
+      String nigga = "";
+      //nigga += 'т';
+      //tft.print(nigga+'т');
       
     
         
@@ -83,6 +102,7 @@ void loop(void) {
         //   }
         // }
       // //tft.println();
+      tft.print(".");
       Serial.println('.');
       
     }
@@ -92,36 +112,62 @@ void loop(void) {
     {
       flag = 1;
     }
-    if(c == '#')
-    {
-      Serial.write('\n');
-    }
     if(flag)
     {
-      if(hflag == 1)
-      {
-
-        //tft.setCursor(myvar, myvarh);
-        //tft.print(utf8rus(String(char(replace_letter(toupper(c))))));
-        //tft.print(String(c));
-      }
       Serial.write(c); // Пересылать данные с ESP8266 в монитор порта Arduino
       ParsedBySkrm+=c;
-    }
+    
     if(c == '#')
     {
-      Serial.write('\n');
+      //Serial.write('\n');
       hflag = 1;
       if((c == '#') && (hflag))
       {
         hflag = 0;
-        Serial.println(ParsedBySkrm);
-        tft.print(utf8rus(ParsedBySkrm));
+        if(ParsedBySkrm.indexOf("~1")>-1 && ParsedBySkrm.indexOf("~2")>-1 && ParsedBySkrm.indexOf("~3")>-1 && ParsedBySkrm.indexOf("~4")>-1)// && ParsedBySkrm.indexOf("~5")>-1 )//&& ParsedBySkrm.indexOf("~6")>-1)
+        {
+          //String half1;
+          tft.setTextSize(2);
+          tft.fillScreen(BLACK);
+          tft.setCursor(0, 0);
+          tft.setTextColor(YELLOW);
+          tft.println(utf8rus("Время 3:42"));
+          tft.setTextColor(WHITE);
+          for(int i = 0; i < ParsedBySkrm.length()/2;i++ )
+          {
+
+            if(ParsedBySkrm[i]=='#')
+            {
+              half1+='\n';
+              half1+='\n';
+              continue;
+            }
+            half1+=ParsedBySkrm[i];
+          }
+          // Serial.println(ParsedBySkrm);
+          // tft.print(utf8rus(ParsedBySkrm));
+          Serial.println(half1);
+          tft.print(utf8rus(half1));
+          for(int i =  ParsedBySkrm.length()/2; i < ParsedBySkrm.length();i++ )
+          {
+
+            if(ParsedBySkrm[i]=='#')
+            {
+              half2+='\n';
+              half2+='\n';
+              continue;
+            }
+            half2+=ParsedBySkrm[i];
+          }
+          tft.print(utf8rus(half2));
+          ParsedBySkrm = "";
+        }
       }
     }
     if(c == '\n')
     {
       flag = 0;
+    }
     }
     
   }

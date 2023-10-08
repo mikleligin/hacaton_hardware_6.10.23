@@ -88,6 +88,7 @@ void loop()
   {
     Serial.print('~');
     Serial.print(j);
+    Serial.print(" ");
     for(int i = indexx[j]; temp_line[i] !='<' ; i++)
     {
       Serial.print(temp_line[i]);
