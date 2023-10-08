@@ -1,0 +1,21 @@
+# ninja log v5
+1	1091	7184611391121730	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/main.o	202b0aeda95e48d3
+1	487	7182203474729845	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/startup_stm32f40xx.o	1874a27c0ab74bc1
+5	136	7184591756887538	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/system_stm32f4xx.o	7eee90ddf8de4cc3
+1095	1162	7184611391989213	C:/Users/monke/Desktop/Lab5.2/Debug/Exe/1.out	188f84fbfce88f73
+2	1528	7184636839774596	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/main.o	202b0aeda95e48d3
+1532	1601	7184636840632322	C:/Users/monke/Desktop/Lab5.2/Debug/Exe/1.out	188f84fbfce88f73
+5	1619	7184641373900151	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/main.o	202b0aeda95e48d3
+1624	1689	7184641374815642	C:/Users/monke/Desktop/Lab5.2/Debug/Exe/1.out	188f84fbfce88f73
+2	1213	7184642065660568	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/main.o	202b0aeda95e48d3
+1217	1278	7184642066435282	C:/Users/monke/Desktop/Lab5.2/Debug/Exe/1.out	188f84fbfce88f73
+27	1468	7184642744055494	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/main.o	202b0aeda95e48d3
+1472	1527	7184642744756837	C:/Users/monke/Desktop/Lab5.2/Debug/Exe/1.out	188f84fbfce88f73
+2	986	7184643262294393	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/main.o	202b0aeda95e48d3
+992	1052	7184643263035383	C:/Users/monke/Desktop/Lab5.2/Debug/Exe/1.out	188f84fbfce88f73
+4	1819	7184643837185412	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/main.o	202b0aeda95e48d3
+1824	1891	7184643838006666	C:/Users/monke/Desktop/Lab5.2/Debug/Exe/1.out	188f84fbfce88f73
+2	1185	7184644311397761	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/main.o	202b0aeda95e48d3
+1191	1252	7184644312245945	C:/Users/monke/Desktop/Lab5.2/Debug/Exe/1.out	188f84fbfce88f73
+8	2121	7184645940200371	C:/Users/monke/Desktop/Lab5.2/Debug/Obj/main.o	202b0aeda95e48d3
+2126	2187	7184645941022850	C:/Users/monke/Desktop/Lab5.2/Debug/Exe/1.out	188f84fbfce88f73

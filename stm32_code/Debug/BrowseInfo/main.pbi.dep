@@ -1,0 +1,19 @@
+C:\Users\monke\Desktop\Lab5.2\Debug\BrowseInfo\main.pbi: \
+  C:\Users\monke\Desktop\Lab5.2\main.cpp \
+  C:\Users\monke\Desktop\Lab5.2\stm32f4xx.h \
+  D:\IAR\arm\CMSIS\Core\Include\core_cm4.h D:\IAR\arm\inc\c\stdint.h \
+  D:\IAR\arm\inc\c\ycheck.h D:\IAR\arm\inc\c\yvals.h \
+  D:\IAR\arm\inc\c\DLib_Defaults.h D:\IAR\arm\inc\c\DLib_Config_Normal.h \
+  D:\IAR\arm\inc\c\DLib_Product.h \
+  D:\IAR\arm\CMSIS\Core\Include\cmsis_version.h \
+  D:\IAR\arm\CMSIS\Core\Include\cmsis_compiler.h \
+  D:\IAR\arm\CMSIS\Core\Include\cmsis_iccarm.h \
+  D:\IAR\arm\inc\c\aarch32\iccarm_builtin.h \
+  D:\IAR\arm\CMSIS\Core\Include\mpu_armv7.h D:\IAR\arm\inc\c\math.h \
+  D:\IAR\arm\inc\c\DLib_float_setup.h D:\IAR\arm\inc\c\xtgmath.h \
+  D:\IAR\arm\inc\cpp\xtr1common D:\IAR\arm\inc\cpp\cstdlib \
+  D:\IAR\arm\inc\c\stdlib.h D:\IAR\arm\inc\c\ysizet.h \
+  D:\IAR\arm\inc\c\DLib_Product_stdlib.h \
+  C:\Users\monke\Desktop\Lab5.2\doom_guy.h \
+  C:\Users\monke\Desktop\Lab5.2\ictis.h D:\IAR\arm\inc\c\string.h \
+  D:\IAR\arm\inc\c\DLib_Product_string.h

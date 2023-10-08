@@ -1,0 +1,12 @@
+C:\Users\monke\Desktop\Lab5.2\Debug\BrowseInfo\ssd1306_tests.pbi: \
+  C:\Users\monke\Downloads\stm32-ssd1306-master\ssd1306\ssd1306_tests.c \
+  D:\IAR\arm\inc\c\string.h D:\IAR\arm\inc\c\ycheck.h \
+  D:\IAR\arm\inc\c\yvals.h D:\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\IAR\arm\inc\c\DLib_Config_Normal.h D:\IAR\arm\inc\c\DLib_Product.h \
+  D:\IAR\arm\inc\c\ysizet.h D:\IAR\arm\inc\c\DLib_Product_string.h \
+  D:\IAR\arm\inc\c\stdio.h \
+  C:\Users\monke\Downloads\stm32-ssd1306-master\ssd1306\ssd1306.h \
+  D:\IAR\arm\inc\c\stddef.h \
+  C:\Users\monke\Downloads\stm32-ssd1306-master\ssd1306\ssd1306_fonts.h \
+  D:\IAR\arm\inc\c\stdint.h \
+  C:\Users\monke\Downloads\stm32-ssd1306-master\ssd1306\ssd1306_tests.h
